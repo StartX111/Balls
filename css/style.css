@@ -1,0 +1,32 @@
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+
+.section .container{
+}
+
+.images{
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.ball{
+    position: absolute;
+    top: 15px;
+    left: 270px;
+    /*top 15-628*/
+    /*left 270-1212*/
+    border: 2px solid red;
+    background: red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+
+.footer{
+    background-color: #8b8fff;
+}
