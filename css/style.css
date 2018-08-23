@@ -15,8 +15,8 @@
 
 .ball{
     position: absolute;
-    top: 15px;
-    left: 270px;
+    top: 20px;
+    left: 280px;
     /*top 15-628*/
     /*left 270-1212*/
     border: 2px solid red;
