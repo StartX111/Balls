@@ -14,11 +14,11 @@ class controller{
             left_max: 1212
         };
 
-        this.el.addEventListener('click', this.getStatus.bind(this));
+        this.el.addEventListener('click', this.updateColorFromClick.bind(this));
 
-        setInterval(this.getStatus.bind(this), 50)
+        setInterval(this.updateBallPosition.bind(this), 50)
     }
-    getStatus(){
+    updateBallPosition(){
         let currentPosition = this.theBall.getBoundingClientRect();
         if (this.ballOptions.leftState){
             if (currentPosition.left + this.ballOptions.left_update < this.ballOptions.left_max){
@@ -50,20 +50,12 @@ class controller{
                 this.ballOptions.top_update = Math.random()*10;
             }
         }
-
     }
 
 
-
-    movement(stateTime){
-        if (stateTime>0){//если есть скорость, то движемся, иначе стоим
-            if (MAX.left_min < this.ball.positionX < MAX.left_max){
-                this.ball.positionX = this.bolStartPosition.left * this.bolStartPosition.left_update;
-            }
-            if (MAX.top_min < this.ball.positionY < MAX.top_max){
-                this.ball.positionY = this.bolStartPosition.top * this.bolStartPosition.top_update;
-            }
+    updateColorFromClick(event){
+        if (event.target.className === 'ball'){
+            this.theBall.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
         }
     }
-
 }
